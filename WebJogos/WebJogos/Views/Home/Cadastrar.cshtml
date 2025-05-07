@@ -5,22 +5,27 @@
         <div class="col-md-6">
             <form asp-controller="Home" asp-action="Create">
                 <fieldset>
-                    <h2 class="text-center mt-3">Cadastrar tarefa</h2>
+                    <h2 class="text-center mt-3">Cadastrar Jogo</h2>
                     <input asp-for="Id" type="hidden" />
                     <div class="form-group">
-                        <label asp-for="Status">Status</label>
+                        <label asp-for="Status">Status do Jogo</label>
                         <select asp-for="Status" asp-items="Html.GetEnumSelectList<Status>()" class="form-control"></select>
                     </div>
                     <div class="form-group">
                         <label class="col-form-label mt-4" for="inputDefault">Título</label>
-                        <input asp-for="Titulo" type="text" class="form-control" placeholder="Nome da tarefa" id="inputDefault">
+                        <input asp-for="Titulo" type="text" class="form-control" placeholder="Nome do Jogo" id="inputDefault">
                     </div>
                     <div class="form-group">
                         <label for="exampleTextarea" class="form-label mt-4">Descrição</label>
                         <textarea asp-for="Descricao" class="form-control" id="exampleTextarea" rows="3"></textarea>
                     </div>
-                    <label for="customRange3" class="form-label">Pontuação</label>
-                    <input asp-for="Pontuacao" type="range" class="form-range" min="1" max="100" step="0.0" id="customRange3">
+                    <label for="customRange3" class="form-label">Nota do Jogo</label>
+                    <div class=" d-flex justify-content-between"> @for (int i = 0; i <=10; i++)
+                        {
+                            <span> @i </span>
+                        }
+                    </div>
+                        <input asp-for="Pontuacao" type="range" class="form-range" min="0" max="10" step="0.0" id="customRange3">
                     <div class="d-flex justify-content-between mt-3">
                         <input type="submit" asp-controller="Home" asp-action="Index" class="btn btn-outline-light" value="Cancelar" />
                         <input type="submit" class="btn btn-danger" value="Salvar" />

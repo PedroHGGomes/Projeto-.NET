@@ -2,14 +2,14 @@
 
 <div class="container">
     <div class="row justify-content-center mt-5">
-        <h2 class="text-center text-danger">Lista de Desejos</h2>
+        <h2 class="text-center text-primary">Lista de Desejos</h2>
         <div class="row mt-3">
             @if (Model.Any())
             {
                 @foreach (var task in Model)
                 {
                     <div class="col-md-4 mb-3">
-                        <div class="card border-danger" style="max-width: 20rem;">
+                        <div class="card border-primary" style="max-width: 20rem;">
                             <div class="card-header d-flex justify-content-between">
                                 Lista de Desejos
                                 <p>@task.DataCriacao.ToString("dd/MM/yyyy")</p>
@@ -62,7 +62,7 @@
             }
         </div>
     <div class="d-flex justify-content-center mt-4">
-        <a asp-controller="Desejos" asp-action="Cadastrar" class="btn btn-danger btn-lg">
+            <a asp-controller="Desejos" asp-action="Cadastrar" class="btn btn-primary btn-lg">
             <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" class="bi bi-plus" viewBox="0 0 16 16">
                 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
             </svg>

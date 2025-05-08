@@ -6,8 +6,8 @@ namespace WebJogos.Controllers
 {
     public class DesejosController : Controller
     {
-        private static List<TaskItem> listaDesejos = new List<TaskItem>();
-        private static int proximoId = 1;
+        public static List<TaskItem> listaDesejos = new List<TaskItem>();
+        public static int proximoId = 1;
 
         public IActionResult Index()
         {
@@ -76,7 +76,7 @@ namespace WebJogos.Controllers
         }
 
         [HttpGet]
-        public IActionResult PesquisarTarefa(string termo)
+        public IActionResult PesquisarJogo(string termo)
         {
 
             var tarefasEncontradas = listaDesejos.Where(t => t.Titulo.Contains(termo) || t.Descricao.Contains(termo)).ToList();

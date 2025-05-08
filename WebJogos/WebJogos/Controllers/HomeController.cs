@@ -90,12 +90,12 @@ namespace WebJogos.Controllers
         }
 
         [HttpGet]
-        public IActionResult PesquisarTarefa(string termo)
+        public IActionResult PesquisarJogo(string termo)
         {
 
-            var tarefasEncontradas = listaJogos.Where(t => t.Titulo.Contains(termo) || t.Descricao.Contains(termo)).ToList();
+            var resultadoBiblioteca = listaJogos.Where(t => t.Titulo.Contains(termo) || t.Descricao.Contains(termo)).ToList();
 
-            return View("Listar", tarefasEncontradas);
+            return View("Listar", resultadoBiblioteca);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

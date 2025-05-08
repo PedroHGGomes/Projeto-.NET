@@ -2,7 +2,7 @@
 
 <div class="container">
     <div class="row justify-content-center mt-5">
-        <div class="col-md-6">
+        <div class="col-md-6 cadastrar-card ">
             <form asp-controller="Home" asp-action="Create">
                 <fieldset>
                     <h2 class="text-center mt-3">Cadastrar Jogo</h2>
@@ -19,7 +19,7 @@
                         <label for="exampleTextarea" class="form-label mt-4">Descrição</label>
                         <textarea asp-for="Descricao" class="form-control" id="exampleTextarea" rows="3"></textarea>
                     </div>
-                    <label for="customRange3" class="form-label">Nota do Jogo</label>
+                    <label for="customRange3" class="form-label mt-4">Nota do Jogo</label>
                     <div class=" d-flex justify-content-between"> @for (int i = 0; i <=10; i++)
                         {
                             <span> @i </span>
@@ -27,7 +27,7 @@
                     </div>
                         <input asp-for="Pontuacao" type="range" class="form-range" min="0" max="10" step="0.0" id="customRange3">
                     <div class="d-flex justify-content-between mt-3">
-                        <input type="submit" asp-controller="Home" asp-action="Index" class="btn btn-outline-light" value="Cancelar" />
+                        <input type="submit" asp-controller="Home" asp-action="Index" class="btn btn-dark" value="Cancelar" />
                         <input type="submit" class="btn btn-danger" value="Salvar" />
                     </div>
                 </fieldset>

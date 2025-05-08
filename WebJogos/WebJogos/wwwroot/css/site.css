@@ -9,7 +9,7 @@ html {
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #000000;
 }
 
 html {
@@ -18,5 +18,51 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+  margin-bottom: 30px;
+  background-color: #ffffff;
+  color: #000000;
 }
+
+.navbar {
+    background-color: #ff9900;
+}
+
+#searchInput {
+    background-color: #ffffcc;
+    color: #000000; 
+    border: 1px solid #000000; 
+}
+
+
+#searchForm button {
+    background-color: #ffcc66;
+    color: #000000;
+    border: none;
+}
+
+#searchForm button:hover {
+    background-color: #e68a00; 
+}
+
+.cadastrar-card {
+    border: 3px solid #ff9900; 
+    background-color: #ffffcc;
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+}
+
+.dashboard-card {
+    border: 3px solid #ff9900;
+    background-color: #ffffcc;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-top: 60px;
+}
+
+.card {
+    border: 2px solid #333333;
+}
+
+

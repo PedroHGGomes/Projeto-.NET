@@ -36,3 +36,8 @@ Imagem de exemplo:
 ![image](https://github.com/user-attachments/assets/942e7c20-8838-4798-91f9-6a17d5826f83)
 
 
+Aba de privacidade:
+![image](https://github.com/user-attachments/assets/906125a8-d62c-4dbb-9185-41ca57a66c40)
+
+
+

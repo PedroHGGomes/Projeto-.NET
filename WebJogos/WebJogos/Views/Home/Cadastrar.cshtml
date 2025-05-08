@@ -26,10 +26,11 @@
                         }
                     </div>
                         <input asp-for="Pontuacao" type="range" class="form-range" min="0" max="10" step="0.0" id="customRange3">
-                    <div class="d-flex justify-content-between mt-3">
-                        <input type="submit" asp-controller="Home" asp-action="Index" class="btn btn-dark" value="Cancelar" />
+                    <div class="d-flex justify-content-end gap-2 mt-3">
+                        <a asp-action="Index" asp-controller="Home" class="btn btn-dark">Cancelar</a>
                         <input type="submit" class="btn btn-danger" value="Salvar" />
                     </div>
+
                 </fieldset>
             </form>
         </div>

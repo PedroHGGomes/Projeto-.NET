@@ -12,6 +12,8 @@ namespace WebJogos.Models
         public int Nota { get; set; }
         public DateTime DataCriacao { get; set; } = DateTime.Now;
         public Status Status { get; set; }
+        public decimal? Valor { get; set; } 
+
 
     }
 }

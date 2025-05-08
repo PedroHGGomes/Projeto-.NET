@@ -1,23 +1,23 @@
-﻿
-@model List<TaskItem>
+﻿@model List<TaskItem>
 
 <div class="container">
     <div class="row justify-content-center mt-5">
-        <h2 class="text-center text-success">Lista de Jogos</h2>
+        <h2 class="text-center text-danger">Lista de Desejos</h2>
         <div class="row mt-3">
             @if (Model.Any())
             {
                 @foreach (var task in Model)
                 {
                     <div class="col-md-4 mb-3">
-                        <div class="card border-success" style="max-width: 20rem;">
+                        <div class="card border-danger" style="max-width: 20rem;">
                             <div class="card-header d-flex justify-content-between">
-                                Progresso -  @task.Status
+                                Lista de Desejos
                                 <p>@task.DataCriacao.ToString("dd/MM/yyyy")</p>
                             </div>
                             <div class="card-body">
                                 <h4 class="card-title">@task.Titulo</h4>
                                 <p class="card-text">@task.Descricao</p>
+                                <p class="card-text">R$ @task.Valor</p>
                                 <div class="card-action d-flex justify-content-between">
                                     <span class="badge bg-info">@task.Pontuacao pontos</span>
                                     <div class="justify-content-around">
@@ -58,50 +58,45 @@
             }
             else
             {
-                <p class="text-center">Você não tem nenhum jogo em sua biblioteca.</p>
+                <p class="text-center">Sua lista de desejos está vazia.</p>
             }
-
         </div>
-
-    </div>
     <div class="d-flex justify-content-center mt-4">
-        <a asp-controller="Home" asp-action="Cadastrar" class="btn btn-primary btn-lg">
-            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+        <a asp-controller="Desejos" asp-action="Cadastrar" class="btn btn-danger btn-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" class="bi bi-plus" viewBox="0 0 16 16">
                 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
             </svg>
-            Adicionar jogo
+            Adicionar jogo 
         </a>
     </div>
 </div>
-<script>
 
-    $(document).ready(function () {
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            var taskId = null;
 
-        var taskId = null;
-
-        $('.excluir-tarefa').click(function () {
-            taskId = $(this).data('task-id');
-        });
-
-        $('#confirmarExclusao').click(function () {
-            if (taskId === null) {
-                console.log('ID do jogo não definido.');
-                return;
-            }
-
-            $.post('/Home/Excluir', { id: taskId }, function (result) {
-                if (result.success) {
-                    window.location.reload();
-                } else {
-                    alert("Erro ao excluir jogo.");
-                }
+            $('.excluir-tarefa').click(function () {
+                taskId = $(this).data('task-id');
             });
 
-        });
+            $('#confirmarExclusao').click(function () {
+                if (!taskId) return;
 
-        $("#cancelarExclusao").click(function () {
-            window.location.reload();
-        });
+                $.post('/Desejos/Excluir', { id: taskId }, function (result) {
+                    if (result.success) {
+                        window.location.reload();
+                    } else {
+                        alert("Erro ao excluir.");
+                    }
+                });
+            });
 
-    });
-</script>
+                $("#cancelarExclusao").click(function () {
+                window.location.reload();
+            });
+        });
+    </script>
+}
+
+

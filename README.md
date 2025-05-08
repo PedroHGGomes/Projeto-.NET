@@ -2,6 +2,10 @@
 
 Desenvolvimento de um site para gestão de jogos pessoais.
 
+Tela inicial:
+![image](https://github.com/user-attachments/assets/c94495c2-d8fd-4ebd-a897-d173cf766a77)
+
+
 Possui a funcionalidade de criação de uma biblioteca pessoal de jogos, a partir de um cadastro que tem como pergunta:
 1. Seu progresso dentro do jogo
 2. Titulo
